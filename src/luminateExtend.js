@@ -416,17 +416,10 @@
       }
       requestUrl += requestPath + settings.api;
       
-      var isLuminateOnlineAndSameProtocol = false, 
-      useAjax = false;
-      if(window.location.protocol == requestUrl.split('//')[0] && document.domain == requestPath.split('/')[0]) {
-        isLuminateOnlineAndSameProtocol = true, 
-        useAjax = true;
-      }
-      else if(luminateExtend.global.supportsCORS) {
-        useAjax = true;
-      }
+      var useAjax = (window.location.protocol == requestUrl.split('//')[0] && document.domain == requestPath.split('/')[0]) || 
+                    luminateExtend.global.supportsCORS, 
+      doRequest;
       
-      var doRequest;
       if(useAjax) {
         doRequest = function() {
           if(settings.requiresAuth && settings.data.indexOf('&' + luminateExtend.global.auth.type + '=') == -1) {
@@ -521,7 +514,6 @@
       
       if(settings.requiresAuth || 
          (!useAjax && 
-          !isLuminateOnlineAndSameProtocol && 
           !luminateExtend.global.sessionCookie)) {
         luminateExtend.api.getAuth({
           callback: doRequest, 
