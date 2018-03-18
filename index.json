@@ -1,0 +1,9 @@
+module.export.library = luminateExtend.library
+module.export.global = luminateExtend.global
+module.export.global = luminateExtend.global
+module.export.init = luminateExtend.init
+module.export.global = luminateExtend.global
+module.export.api = luminateExtend.api
+module.export.sessionVars = luminateExtend.sessionVars
+module.export.tags = luminateExtend.tags
+module.export.utils = luminateExtend.utils
