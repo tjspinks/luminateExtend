@@ -145,7 +145,7 @@
   };
   
   /* library info */
-  luminateExtend.library = {
+  module.export.library = {
     version: '1.7.1'
   };
 
