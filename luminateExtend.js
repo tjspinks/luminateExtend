@@ -145,11 +145,10 @@
   };
   
   /* library info */
-  module.export.library = {
+  module.exports.library = {
     version: '1.7.1'
   };
 
-  module.export.library = luminateExtend.library;
   
   /* global settings */
   luminateExtend.global = {
@@ -174,6 +173,8 @@
       }
     }
   };
+
+module.exports.global = luminateExtend.global;
   
   /* init library */
   luminateExtend.init = function(options) {
