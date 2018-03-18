@@ -1,0 +1,26 @@
+{
+  "name": "luminateextend",
+  "version": "1.8.1",
+  "description": "luminate extend js library",
+  "main": "luminateExtend.js",
+  "directories": {
+    "example": "examples",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjspinks/luminateExtend.git"
+  },
+  "keywords": [
+    "luminate"
+  ],
+  "author": "tj spinks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjspinks/luminateExtend/issues"
+  },
+  "homepage": "https://github.com/tjspinks/luminateExtend#readme"
+}
