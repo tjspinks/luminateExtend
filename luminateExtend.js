@@ -148,6 +148,8 @@
   luminateExtend.library = {
     version: '1.7.1'
   };
+
+  module.export.library = luminateExtend.library;
   
   /* global settings */
   luminateExtend.global = {
