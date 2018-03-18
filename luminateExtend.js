@@ -151,7 +151,7 @@
 
   
   /* global settings */
-  luminateExtend.global = {
+  module.exports.global = {
     update: function(settingName, settingValue) {
       if(settingName) {
         if(settingName.length) {
@@ -174,10 +174,8 @@
     }
   };
 
-module.exports.global = luminateExtend.global;
-  
   /* init library */
-  luminateExtend.init = function(options) {
+  module.exports.init = function(options) {
     var settings = $.extend({
       apiCommon: {}, 
       auth: {
@@ -205,12 +203,12 @@ module.exports.global = luminateExtend.global;
   };
   
   /* api */
-  luminateExtend.api = function(requestOptions) {
+  module.exports.api = function(requestOptions) {
     /* make luminateExtend.api an alias for the request method if called directly */
     luminateExtend.api.request(requestOptions || {});
   };
   
-  luminateExtend.api.bind = function(selector) {
+  module.exports.api.bind = function(selector) {
     selector = selector || 'form.luminateApi';
     
     if($(selector).length > 0) {
@@ -271,7 +269,7 @@ module.exports.global = luminateExtend.global;
     return luminateExtend;
   };
   
-  luminateExtend.api.getAuth = function(options) {
+  module.exports.api.getAuth = function(options) {
     var settings = $.extend({
       useCache: true, 
       useHTTPS: false
@@ -350,7 +348,7 @@ module.exports.global = luminateExtend.global;
     }
   };
   
-  luminateExtend.api.getAuthLoad = true;
+  module.exports.api.getAuthLoad = true;
   
   var sendRequest = function(options) {
     var settings = $.extend({
@@ -566,7 +564,7 @@ module.exports.global = luminateExtend.global;
     }
   };
   
-  luminateExtend.api.request = function(requests) {
+  module.exports.api.request = function(requests) {
     /* check for single requests */
     if(!$.isArray(requests)) {
       sendRequest(requests);
@@ -624,7 +622,7 @@ module.exports.global = luminateExtend.global;
   };
   
   /* session variables */
-  luminateExtend.sessionVars = {
+  module.exports.sessionVars = {
     set: function(varName, varValue, callback) {
       var pingOptions = {};
       if(callback) {
@@ -639,11 +637,11 @@ module.exports.global = luminateExtend.global;
   };
   
   /* luminate tags */
-  luminateExtend.tags = function(tagTypes, selector) {
+  module.exports.tags = function(tagTypes, selector) {
     /* make luminateExtend.tags an alias for the parse method if called directly */
     luminateExtend.tags.parse(tagTypes, selector);
   };
-  luminateExtend.tags.parse = function(tagTypes, selector) {
+  module.exports.tags.parse = function(tagTypes, selector) {
     /* use the widgets plugin if available */
     if(luminateExtend.widgets) {
       luminateExtend.widgets(tagTypes, selector);
@@ -685,7 +683,7 @@ module.exports.global = luminateExtend.global;
   };
   
   /* public helper functions */
-  luminateExtend.utils = {
+  module.exports.utils = {
     /* ensure an object is an array so it may be iterated over, i.e. using $.each(), as the API uses an 
        array if there are 2 or more instances of an object, but does not use an array if there is 
        exactly 1 (E-47741) */
